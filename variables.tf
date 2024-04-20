@@ -1,39 +1,26 @@
+variable "vpc_id" {
+  description = "ID of the existing VPC"
+  type        = string
+  default     = "vpc-00c38da1bd64f5f78"
+}
+
+variable "subnet_id1" {
+  description = "ID of the existing subnet"
+  type        = string
+  default     = "subnet-010cf1202660fcdb4"
+}
+
+variable "subnet_id2" {
+  description = "ID of the existing subnet"
+  type        = string
+  default     = "subnet-0d1104e1037af6b4f"
+}
+
+
 variable "aws-region" {
   description = "The AWS region"
   type        = string
   default     = "us-east-1"
-}
-
-
-variable "cluster_name" {
-  description = "Name of the cluster"
-  type        = string
-  default     = "ArgoCD-Cluster"
-}
-
-variable "node_group_name" {
-  description = "Name of the EKS node group"
-  type        = string
-  default     = "ArgoCD-Nodegroup"
-}
-
-
-variable "vpc_id" {
-  description = "The ID of the existing VPC"
-  default     = "vpc-06bdf226c0d976da6" # Default VPC ID
-}
-
-
-variable "subnet_id1" {
-  description = "A list of existing subnet IDs"
-  type        = string
-  default     = "subnet-08f75463478d244d5"
-}
-
-variable "subnet_id2" {
-  description = "A list of existing subnet IDs"
-  type        = string
-  default     = "subnet-00221356af244858e"
 }
 
 variable "instance_profile" {
@@ -52,6 +39,18 @@ variable "disk_size" {
   description = "Instance type"
   type        = string
   default     = "20"
+}
+
+variable "cluster_name" {
+  description = "Name of the cluster"
+  type        = string
+  default     = "EKS-TF-ArgoCD-Cluster"
+}
+
+variable "node_group_name" {
+  description = "Name of the EKS node group"
+  type        = string
+  default     = "Terraform-Nodegroup"
 }
 
 variable "capacity_type" {
